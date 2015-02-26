@@ -1,0 +1,12 @@
+.box {
+    border: 1px solid $modal-content-fallback-border-color;
+    border-radius: 5px;
+    padding: 40px 50px;
+    background-color: $gray2;
+}
+
+.box header {
+    font-weight:500;
+    margin-bottom:20px;
+    font-size:1.2em;
+}

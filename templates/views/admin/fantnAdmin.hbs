@@ -1,0 +1,138 @@
+<main style="margin-top: 80px;">
+    <div class="container text-center">
+        <h3>Fantn Admin</h3>
+    </div>
+
+    <div class="container admin">
+
+        <div class="row">
+            <h4>Create QRCode</h4>
+            <form method="POST" id="qrform">
+                <input type="email" placeholder="email" name="email" id="create-email"placeholder="Enter Email Adress">
+                <input type="submit" class="btn btn-success" value="Create"></input>
+            </form>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-3">
+                <h4>QrCodes</h4>
+                <div id="qrcodes" class="list">
+                    {{#each qrCodes}}
+                    <div class="mbs">
+                        <div class="row vert-tall">
+                            <div class="col-sm-4"><small>Serial:</small></div>
+                            <div class="col-sm-8"><p class="break mbn">{{prefix}}-{{serialNumber}}</p></div>
+                        </div>
+                        <div class="row vert-tall">
+                            <div class="col-sm-4"><small>Name:</small></div>
+                            <div class="col-sm-8"><p class="break mbn">{{name}}</p></div>
+                        </div>
+                        <div class="row vert-tall">
+                            <div class="col-sm-4"><small>Owner:</small></div>
+                            <div class="col-sm-8"><p class="break mbn">{{owner.email}}</p></div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <h4>Users</h4>
+                <div id="email" class="list mvs">
+                    {{#each users}}
+                    <div class="row mbs">
+                        <div class="col-sm-4"><small>Email:</small></div>
+                        <div class="col-sm-8"><p class="break mbn">{{email}}</p></div>
+                    </div>
+                    <div class="row mbs">
+                        <div class="col-sm-4"><small>Mobile:</small></div>
+                        <div class="col-sm-8"><p class="break mbn">{{mobile}}</p></div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <h4>Issues</h4>
+                <div id="issues" class="list mvs">
+                    {{#each issues}}
+                    <div class="mbs">
+                    <div class="row">
+                        <div class="col-sm-4"><small>Id:</small></div>
+                        <div class="col-sm-8"><p class="break mbn">{{_id}}</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><small>Date:</small></div>
+                        <div class="col-sm-8"><p class="break mbn">{{timestamp}}</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><small>QR-serial:</small></div>
+                        <div class="col-sm-8"><p class="break mbn">{{serialNumber}}</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><small>Finder:</small></div>
+                        <div class="col-sm-8"><p class="break mbn">{{findersGSM}}</p></div>
+                    </div>
+                </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <h4>Events</h4>
+                <div id="events" class="list mvs">
+                    {{#each events}}
+                    <div class="mbs">
+                    <div class="row">
+                        <div class="col-sm-4"><small>Id:</small></div>
+                        <div class="col-sm-8"><p class="break mbn">{{_id}}</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><small>Action:</small></div>
+                        <div class="col-sm-8"><p class="break mbn">{{action}}</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><small>Text:</small></div>
+                        <div class="col-sm-8"><p class="break mbn">{{actionText}}</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><small>Issue:</small></div>
+                        <div class="col-sm-8"><p class="break mbn">{{issueId}}</p></div>
+                    </div>
+                </div>
+                    {{/each}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+<script src="/js/jquery-1.9.1.min.js"></script>
+
+<script>
+
+$(function() {
+    $('#qrform').on('submit', function (e) {
+        e.preventDefault();
+
+        var email = $('#create-email').val();
+        var userid = "{{bsUser._id}}";
+        var url = '/api/users/' + userid + '/qrCodes';
+
+        $.post(url, {
+            data : {email : email},
+            success : function () {
+                location.reload();
+            }
+        })
+        .fail(function (err) {
+            console.log('fail: ' + err);
+        });
+
+        return false;
+    });
+});
+
+</script>

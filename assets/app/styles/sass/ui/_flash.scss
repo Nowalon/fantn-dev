@@ -1,0 +1,18 @@
+.alert {
+    position:fixed;
+    top: $nav-height;
+    left:0;
+    right:0;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    z-index:$z-flash;
+
+    &.alert-danger {
+        background: rgba(231, 76, 60, 0.9);
+    }
+
+    &.alert-success {
+        background: $brand-success;
+    }
+}

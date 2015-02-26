@@ -1,0 +1,138 @@
+.mvl {margin: 5em 0;}
+.mvm {margin:2em 0;}
+.mvs {
+    margin-bottom: 1em !important;
+    margin-top: 1em !important;
+}
+.mvn {
+    margin-bottom: 0em !important;
+    margin-top: 0em !important;
+}
+.mhs {margin: 0 1em; }
+.mbl { margin-bottom:6em !important;}
+.mls {margin-left: 1em !important;}
+.mlxs {margin-left: 0.5em !important;}
+.mlm { margin-left: 2em !important; }
+.mbxl { margin-bottom:8em; }
+.mts { margin-top:1em !important; }
+.mbs { margin-bottom:1em !important; }
+.mbm { margin-bottom: 3em !important;}
+.mbn { margin-bottom: 0em !important;}
+.mam {margin:2em;}
+.mts {margin-top: 1em;}
+.mtm {margin-top: 2em;}
+.mtl {margin-top: 3em;}
+.pas {padding: 1em;}
+.pal {padding: 3em;}
+
+.pvl {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+.pvxl {
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+.pvxxl {
+    padding-top: 8em !important;
+    padding-bottom: 8em !important;
+}
+.phm {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}
+.pam {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}
+.pas {
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+}
+
+.dark-pad {
+    background: rgba(34, 34, 34, 0.15);
+    padding: 13px;
+}
+
+.mrs { margin-right: 1em;}
+.w-8 {
+    width:80%;
+}
+
+.body { margin-top:$nav-height;}
+.centerify {margin:auto; text-align: center;}
+.bottomify {position:absolute; left:0; right:0;bottom:0;}
+.rightify {position:absolute; right: 0;}
+.in { display:inline-block;}
+.block { display:block;}
+.right {float:right;}
+.left {float:left;}
+.icon-2x { font-size:2em;}
+.point {cursor:pointer;}
+.rel {position:relative;}
+.abs {position:absolute;}
+.base{position:relative; z-index:1;}
+
+.hide {
+    display:none !important;
+}
+.light-brd {
+    border: 1px solid #fff;
+    @include box-shadow(0px 0px 3px rgba(51, 51, 51, 0.33));
+}
+
+.brd-bottom {
+    border-bottom: 1px solid $gray6;
+}
+
+
+.abs-overlay {
+    @include gradient-radial(rgba(51, 51, 51, 0.21), rgba(34, 34, 34, 0.65));
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index: 2;
+}
+
+.abs-mid-center {
+    z-index: 3;
+    color: #fff;
+    left:0;
+    right:0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.full-page {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.full-page.faded {
+    background-image:url('/images/bcbag.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: $z-base;
+}
+
+.full-page.faded.register {
+    background-image:url('/images/fantnbenkiphone2.jpg');
+}
+
+@media (max-width: $screen-sm) {
+    .pvxxl {
+        padding-top: 4em !important;
+        padding-bottom: 4em !important;
+    }
+}

@@ -1,0 +1,92 @@
+.img-md {width:150px;}
+.img-xs {width:40px;}
+.img-lg {width: 200px;}
+.img-sq-sm {width: 35px !important; height:35px !important;}
+.img-full{width: 100%;}
+.img-8 {width:80%;}
+.img-6 {width:60%;}
+.img-logo {
+    // width: 45px;
+    width: 85px;
+    position:absolute;
+    top: 0;
+    left:0;
+}
+
+.payment-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    right: 12px;
+}
+
+.dark-edge {
+    @include box-shadow(0 0 1px rgba(51, 77, 92, 0.48));
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.img-borderd {
+    border:1px solid $gray2;
+}
+
+.img-thumbnail {
+    cursor: pointer;
+    @include transition(opacity, 0.1s ease-out);
+    &:hover {
+        opacity:0.6;
+    }
+    &.sel {opacity: 0.6;}
+}
+
+.scale {
+    &:hover {
+        @include scale(1.2, 1.2);
+    }
+}
+
+img.bg {
+    /* Set rules to fill background */
+    z-index: 0;
+    min-height: 100%;
+    min-width: 1024px;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+    img.bg {
+        left: 50%;
+        margin-left: -512px;   /* 50% */
+    }
+}
+
+
+.banner {
+    background-position: 50% 45%;
+    background-repeat: no-repeat;
+    background-image:url('/images/buss.jpg');
+    height: 100%;
+    background-size: cover;
+    width: 100%;
+}
+
+.banner.banner-tt {
+    background-position: center center;
+    background-image:url('/images/JustHeads_c.jpg');
+}
+
+.banner.banner-tc {
+    background-position: center center;
+    background-image:url('/images/tandc.jpg');
+}
+
+.banner-small {
+    height:300px;
+}

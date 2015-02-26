@@ -1,0 +1,26 @@
+.qr-listing {
+    width:75%;
+}
+
+.qr-listing .item {
+    border-top: 1px solid $gray4;
+    padding:5px 0;
+}
+
+.qr-listing .edit {
+    display:none;
+
+    &.show {
+        display:block;
+    }
+}
+
+.qr-listing .button { margin: 0;}
+
+.qr-listing .header {
+    color: $blue-faded;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin-bottom:10px;
+}

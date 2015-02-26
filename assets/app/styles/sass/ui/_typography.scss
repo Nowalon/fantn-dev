@@ -1,0 +1,140 @@
+html {
+    font-weight: 300;
+    font-style: normal;
+}
+
+.fat {
+    font-weight:700;
+}
+
+.thin {
+    font-weight:400;
+}
+
+.skinny {
+    font-weight:100;
+}
+
+
+
+.icon-round {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+    margin: 0.1em 0.5em;
+    border: 1px solid;
+    border-radius: 100%;
+    font-size: 1.5em;
+    padding: 6px 1px 1px 2px;
+}
+
+
+/*------------------------------------*\
+    $ICONS
+\*------------------------------------*/
+
+[data-icon]:before {
+    content: attr(data-icon);
+    text-transform: none;
+    font-weight: normal;
+    font-variant: normal;
+    font-family: 'Icons';
+    line-height: 1;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon {
+    &.i-2x { font-size:2em; }
+    &.i-3x { font-size:2.6em; }
+    &.i-4x { font-size:4em; }
+    &.i-huge { font-size:12em; }
+}
+
+
+
+
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+
+a {
+    // @include transition (color .2s ease-in);  // You can use this if Bourbon is installed
+    // color: $color2;
+    font-weight: 600;
+
+    &:hover{ color: $brand-primary; }
+}
+
+
+
+
+
+/*------------------------------------*\
+    $OTHER
+\*------------------------------------*/
+
+strong,
+.bold{ font-weight: bold; }
+.t1 {font-size: 2em !important;}
+.kill {font-size: 5em !important;}
+.fatty {font-size: 6em !important; font-weight: 600;}
+.term {font-size:2em !important;}
+.t-shadow {text-shadow: 1px 1px 6px rgba(0,0,0,0.5);}
+.killer {
+    font-size:9em;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+    margin: 0.5em;
+}
+em, .it{ font-style: italic; }
+
+.no-underline{ text-decoration: none; }
+.cap { text-transform: capitalize; }
+.fade {
+    font-weight: 700;
+    color: $gray3;
+}
+.faded {
+    color: $gray3;
+}
+
+.white {
+    color:$gray2 !important;
+}
+
+.xsmall {
+    font-size:11px;
+}
+
+.break {
+    overflow-wrap: break-word;
+}
+
+
+@media (max-width: $screen-sm) {
+    body{font-size: 10px;}
+
+    .killer {
+        font-size: 5em !important;
+        margin:0;
+    }
+
+    .kill {
+        font-size: 3em !important;
+        margin:0;
+    }
+
+    .fatty {
+        font-size: 3em !important;
+    }
+}

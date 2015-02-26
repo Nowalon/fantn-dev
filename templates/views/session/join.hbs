@@ -1,0 +1,47 @@
+<div id="modal-auth" role="dialog" class="modal in light-brd">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="auth-box modal-pane-join">
+                <div class="modal-header brd-bottom">
+                    <a href="/"><button type="button" data-dismiss="modal" aria-hidden="true" class="close"><i class="ion-ios7-close"></i></button></a>
+                    <h4 id="join-header" class="modal-title">Bli Medlem Hos FANTN</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="social-signup-buttons">
+                        <div class="signup-button">
+                            <label>Registrer deg med </label>
+                            <a href="/auth/facebook?target=/" title="Sign in with Facebook" class="btn btn-face">
+                                <span class="signup-button__text"> Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <p class="auth-form-divider">
+                        <span class="auth-form-divider-text">Eller</span>
+                    </p>
+                    <form method="post" action="/join" autocomplete="off" novalidate="novalidate" class="auth-form">
+                        <input type="hidden" name="action" value="join"/>
+                        <input type="hidden" name="target" value="/"/>
+                        <div class="form-groups">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="email" class="sr-only">Email</label>
+                                    <input type="email" name="email" placeholder="Email" class="form-control"/>
+                                </div>
+                                <div class="form-group"><label for="password" class="sr-only">Velg passord</label>
+                                    <input type="password" name="password" placeholder="Velg passord" class="form-control">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-block btn-primary btn-submit">Bli Medlem</button>
+                        </form>
+
+                        <p class="text-center text-muted mts">Har du en konto allerede? <a href="/signin" rel="modal-pane" data-modal-pane="signin">Log in</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="full-page faded"></div>

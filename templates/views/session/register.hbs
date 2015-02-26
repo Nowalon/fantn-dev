@@ -1,0 +1,17 @@
+<div id="app-start"></div>
+<div id="modal-region"></div>
+
+<script type="application/json" id="initial-state">{{{state}}}</script>
+
+<script>
+    window.__bootstrap = {
+        qrCodes : [],
+        user : {
+            id : '{{user._id}}',
+            email : '{{user.email}}',
+            mobileLand : '{{user.mobileLand}}'
+        }
+    };
+</script>
+
+<script src="/dist/scripts/registerApp.bundle.js"></script>

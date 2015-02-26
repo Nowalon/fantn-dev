@@ -1,0 +1,222 @@
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+
+// Example
+
+
+
+.btn,
+.btn:hover {
+    border-color: rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn-default {
+    @include btn-shadow($btn-default-bg);
+
+    &:hover {
+        @include btn-shadow-inverse($btn-default-bg);
+    }
+}
+
+.btn-primary {
+    @include btn-shadow($btn-primary-bg);
+
+    &:hover {
+        @include btn-shadow-inverse($btn-primary-bg);
+    }
+}
+
+.btn-success {
+    @include btn-shadow($btn-success-bg);
+
+    &:hover {
+        @include btn-shadow-inverse($btn-success-bg);
+    }
+}
+
+.btn-info {
+    @include btn-shadow($btn-info-bg);
+
+    &:hover {
+        @include btn-shadow-inverse($btn-info-bg);
+    }
+}
+
+.btn-warning {
+    @include btn-shadow($btn-warning-bg);
+
+    &:hover {
+        @include btn-shadow-inverse($btn-warning-bg);
+    }
+}
+
+.btn-danger {
+    @include btn-shadow($btn-danger-bg);
+
+    &:hover {
+        @include btn-shadow-inverse($btn-danger-bg);
+    }
+}
+
+.btn-link,
+.btn-link:hover {
+    border-color: transparent;
+}
+
+// .btn {
+//     @include transition (all .2s ease-in-out);
+//     display:inline-block;
+//     margin:0 0 10px 0;
+//     background: $brand-primary;
+//     color: $white;
+//     border: none;
+//     vertical-align: middle;
+//     white-space: nowrap;
+//     cursor: pointer;
+//
+//     padding: 9px 34px;
+//     font-size: 17px;
+//     line-height: 1.471;
+//     border-radius: 27px;
+//     font-weight: 400;
+//     -webkit-transition: border .25s linear,color .25s linear,background-color .25s linear;
+//     transition: border .25s linear,color .25s linear,background-color .25s linear;
+//     -webkit-font-smoothing: subpixel-antialiased;
+//
+//     &:hover{
+//         text-decoration:none;
+//         background: rgba(51, 77, 92, 0.75);
+//     }
+//
+//     &:active,
+//     &:focus{
+//         outline:none;
+//     }
+//
+//     &.active {
+//         opacity: 0.5;
+//     }
+//
+//     &:disabled {
+//         background:$gray3 !important;
+//     }
+//
+    // &.btn-small {
+    //     padding-top: 4px;
+    //     padding-bottom: 3px;
+    //     padding-right:1.5em;
+    //     padding-left: 1.5em;
+    //     line-height:2;
+    //     font-size: 12px;
+    // }
+    //
+    // &.btn-half {
+    //     width: 50%;
+    // }
+    //
+    // &.btn-success {
+    //     background: $brand-success-t;
+    //     &:hover { background: rgba(53, 181, 96, 0.8); }
+    // }
+    //
+    // &.btn-info {
+    //     background:$brand-success;
+    //     // &:hover { background: rgba(235, 231, 54, 0.53); }
+    // }
+
+.btn {
+    &.btn-small {
+        padding-top: 4px;
+        padding-bottom: 3px;
+        padding-right:1.5em;
+        padding-left: 1.5em;
+        line-height:2;
+        font-size: 12px;
+    }
+
+    .small {
+        color: rgba(255, 255, 255, 0.87);
+        font-weight: 100;
+    }
+
+    &.btn-half {
+        width: 50%;
+    }
+
+    .btn-warning {
+        background: $brand-warning;
+    }
+
+    &.btn-face {
+        background:$facebook;
+        color: $white;
+        border:1px solid $gray;
+    }
+
+    &.btn-block {
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+    $SIZES
+\*------------------------------------*/
+
+// Example
+
+// .btn--small{
+//     padding-top: 4px;
+//     padding-bottom: 3px;
+//     padding-right:1.5em;
+//     padding-left: 1.5em;
+//     line-height:2;
+//     @include font-size(12px);
+// }
+
+
+
+
+
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+
+/**
+ * Colors
+ */
+
+ // Example
+
+// .btn--color1{
+//     @extend .bg-color1;
+//     color: $white;
+//     &:hover{
+//         background-color: $color1;
+//     }
+// }
+
+
+
+
+
+
+/**
+ * HOVERS
+ */
+
+// Example
+
+// .btn--color1, .btn--color2, .btn--color3, .btn--color4, .btn--gray4{
+//     &:hover{
+//         color: $white;
+//     }
+// }

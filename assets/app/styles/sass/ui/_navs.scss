@@ -1,0 +1,138 @@
+.nav {
+    text-align: justify;
+    background: $dark-trans;
+    color: #fff;
+    height: 51px;
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    padding:0 8px;
+    z-index: 100000;
+}
+
+.nav::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.nav > div,
+.nav > div::before,
+.nav nav,
+.nav > div a {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.nav i {
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.nav > div {
+    height: 100%;
+}
+
+.nav > div::before {
+    content: '';
+    height: 100%;
+}
+
+.nav nav a {
+    white-space: nowrap;
+}
+
+.nav-right .links {
+    color: $white;
+    margin: 0 9px;
+}
+
+.dropdown-menu > div {
+    top: 50px;
+    background: $brand-primary;
+    padding: 10px 25px;
+    position:fixed;
+    left:0;
+    right:0;
+    text-align: center;
+}
+
+.dropdown-menu a {
+    font-size: 1.3em;
+    margin:10px 0;
+    display : block;
+}
+
+
+.dropdown-menu aside {
+    a {
+        display:inline-block;
+    }
+    i {
+        border:0;
+    }
+}
+
+.nav i {
+    padding: 0px 13px;
+    color: $white;
+    @include transition(color .2s ease-in-out);
+    cursor: pointer;
+    font-size: 1.7em;
+    &:hover {
+        color: $white;
+    }
+}
+
+.nav .btn {color:$white;}
+
+.nav .btn {
+    margin:0;
+    line-height: 1em;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: .75em 1em .75em 1em;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.nav .support {
+    position: relative;
+    bottom: -7px;
+    margin-left:90px;
+}
+
+// You should unhack this.
+aside a {
+    margin-top: -12px;
+}
+
+.modal-nav {
+    a {
+        font-size:1.2em;
+        margin:5px 15px;
+    }
+
+    a.active {
+        border-bottom: 5px solid $brand-success;
+    }
+
+    a:focus, a:hover {
+        text-decoration:none !important;
+    }
+}
+
+@media (max-width: $screen-xs) {
+    .nav i {
+        padding: 0px 6px;
+    }
+
+    aside.mlm {
+        margin-left:0 !important;
+    }
+}

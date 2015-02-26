@@ -1,0 +1,39 @@
+<div id="modal-auth" tabindex="-1" role="dialog" aria-labelledby="signin" aria-hidden="false" class="modal in light-brd" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="auth-box modal-pane-join">
+                <div class="modal-header brd-bottom">
+                    <a href="/"><button type="button" data-dismiss="modal" aria-hidden="true" class="close"><i class="ion-ios7-close"></i></button></a>
+                    <h6 class="lead">Vi er ikke riktig klare til å lansere enda</h6>
+                    <p>Men registrer deg gjerne nå, så kontakter vi deg når vi er klare</p>
+                </div>
+
+                <div class="modal-body">
+                    <p class="auth-form-divider">
+                        <form method="post" action="/prereg" autocomplete="off" novalidate="novalidate" class="auth-form">
+                            <input type="hidden" name="action" value="prereg">
+                            <input type="hidden" name="target" value="/">
+                            <div class="form-groups">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label for="email" class="sr-only">Din epostadresse</label>
+                                        <input type="email" name="email" placeholder="Email" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="number" class="sr-only">Ditt telefonnummer (valgfritt)</label>
+                                    <input type="text" name="number" placeholder="Telefonummer (valgfritt)" class="form-control">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-block btn-primary btn-submit">Forhåndsregistrer</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="full-page faded"></div>

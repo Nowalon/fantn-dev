@@ -1,0 +1,22 @@
+$font-family-sans-serif: 'Lato', sans-serif;
+$font-family-serif: 'Lato', sans-serif;
+$font-family-monospace: 'Lato', sans-serif;
+
+$nav-height: 51px;
+$navbar-margin-bottom: 0px;
+
+// z-indexes
+$z-page: 0;
+$z-base: 1;
+$zindex-modal: 1050;
+$z-flash: $zindex-modal*2;
+
+@mixin btn-shadow($color){
+    @include gradient-vertical-three-colors(lighten($color, 6%), $color, 60%, darken($color, 4%));
+    filter: none;
+}
+
+@mixin btn-shadow-inverse($color){
+    @include gradient-vertical-three-colors(darken($color, 24%), darken($color, 18%), 40%, darken($color, 14%));
+    filter: none;
+}

@@ -1,0 +1,80 @@
+<header class="nav entry-header">
+    <div class="nav-left">
+        <a href="/"><img src="/images/fantn_logo_lg.jpg" class="img-logo"></a>
+
+        <div class="in support">
+            <p class="mvn hidden-sm hidden-xs block">Støttet av Innovasjon Norge</p>
+            <p class="hidden-sm hidden-xs block">Støttet av SkatteFUNN</p>
+        </div>
+
+        <aside class="mlm in hidden-xs">
+            <a href="https://www.facebook.com/fantnweb"><i class="icon ion-social-facebook"></i></a>
+            <a><i class="icon ion-social-twitter"></i></a>
+            <a><i class="icon ion-social-googleplus"></i></a>
+        </aside>
+    </div>
+
+    <nav class="nav-right">
+        <div class="hidden-xs in">
+            <a href="/" class="links">Hjem</a>
+            <a href="/faq" class="links">FAQ</a>
+            <a href="/contact" class="links">Kontakt</a>
+            <a href="/about" class="links">Om Fantn</a>
+            {{#if user}}
+            <a href="/me" class="links">Min Side</a>
+            {{/if}}
+        </div>
+
+        <div class="hidden dropdown-menu rel">
+            <div id="nav">
+                <a href="/" class="white">Hjem</a>
+                <a href="/faq" class="white">FAQ</a>
+                <a href="/contact" class="white">Kontakt</a>
+                <a href="/about" class="white">Om Fantn</a>
+                {{#if user}}
+                    <a href="/me" class="links">Min Side</a>
+                {{/if}}
+
+                <aside class="mlm in">
+                    <a href="https://www.facebook.com/fantnweb"><i class="icon ion-social-facebook"></i></a>
+                    <a><i class="icon ion-social-twitter"></i></a>
+                    <a><i class="icon ion-social-googleplus"></i></a>
+                </aside>
+            </div>
+        </div>
+        <a><i class="visible-xs-inline-block ion-grid icon i-3x"></i></a>
+        {{#if user}}
+            <a href="/signout" class="btn btn-info">Logg Ut</a>
+        {{else}}
+            <a href="/signin" class="btn btn-info">Logg Inn</a>
+        {{/if}}
+    </nav>
+</header>
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script>
+    $(function () {
+        function globalThings () {
+
+            // init navigation
+            var $menu = $('.dropdown-menu');
+
+            $('.ion-grid').click(function () {
+                $menu.toggleClass('hidden');
+            });
+
+            $('.dropdown-menu').on('mouseleave', function () {
+                $menu.toggleClass('hidden');
+            })
+
+            var $alert = $('.alert');
+
+            if ($alert.length) {
+                setTimeout(function () {
+                    $alert.fadeOut('slow');
+                }, 4000);
+            }
+        }
+
+        globalThings();
+    })
+</script>

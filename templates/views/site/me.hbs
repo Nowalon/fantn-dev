@@ -1,0 +1,22 @@
+<main id="app-start" class="body"></main>
+<div id="modal-region"></div>
+
+<script>
+    window.__bootstrap = {
+        qrCodes : []
+    };
+    {{#each qrCodes}}
+        __bootstrap.qrCodes.push({
+            serialNumber : '{{serialNumber}}',
+            name : '{{name}}',
+            id : '{{_id}}',
+            prefix : '{{prefix}}',
+            image : '{{image}}',
+            description : '{{description}}',
+            selectedStatus : '{{selectedStatus}}',
+            photo : '{{avatarUrl}}'
+        })
+    {{/each}}
+</script>
+<script id="initial-state" type="application/json">{{{user}}}</script>
+<script src="/dist/scripts/profileApp.bundle.js"></script>

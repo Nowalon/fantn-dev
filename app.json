@@ -1,0 +1,28 @@
+{
+  "name": "fantn",
+  "description": "A Keystone App that rocks",
+  "success_url": "/",
+  "keywords": [
+    "node",
+    "express",
+    "keystone"
+  ],
+  "scripts": {
+    "postdeploy": "echo 'restarting'"
+  },
+  "addons": [
+    "mongohq",
+    "rediscloud",
+    "cloudamqp"
+  ],
+  "env": {
+    "THRIFTY": {
+      "description": "run on a single (free) dyno",
+      "value": "true"
+    },
+    "COOKIE_SECRET": {
+      "description": "a secret key for signed cookies",
+      "generator": "secret"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div id="modal-auth" tabindex="-1" role="dialog" aria-labelledby="signin" aria-hidden="false" class="modal in light-brd" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="auth-box modal-pane-join">
+                <div class="modal-header brd-bottom">
+                    <img src="/images/fantn_logo_lg.jpg" alt="fantn" width="100">
+                    <h4 class="modal-title">Takk! Vennligst se til at detaljene stemmer</h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <p class="auth-form-divider">
+
+
+                        <form method="post" autocomplete="off" novalidate="">
+                            <div class="form-groups">
+                                <input type="hidden" name="action" value="confirm.details">
+
+                                <div class="form-group">
+                                    <input type="text" name="name.first" placeholder="First Name (required)" value="Michael" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="name.last" placeholder="Last Name (required)" value="Kølleskov" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email (required)" value="michaelgunnulfsen@gmail.com" class="form-control form-control-labelled">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="website" placeholder="Webside (valgfritt)" class="form-control form-control-labelled">
+                                </div>
+                                <div class="form-group">
+
+                                    <button type="submit" class="btn btn-primary btn-block">Det stemmer, videre →</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

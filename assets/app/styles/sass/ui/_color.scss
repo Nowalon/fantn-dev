@@ -1,0 +1,154 @@
+
+/*------------------------------------*\
+    $CUSTOM
+\*------------------------------------*/
+/**
+ * Place any of your own variables that sit on top of inuit.css here.
+ */
+
+$brand-primary:         rgb(44, 62, 80) !default; // dark-blue
+// $brand-success:         rgb(39, 174, 96) !default; // light green
+$brand-success:         #237430 !default; // green 237430, 007412 #033F1D
+$brand-info:            $brand-success !default; // blue
+$brand-warning:         #F1C40F !default; // yellow
+$brand-danger:          rgb(231, 76, 60) !default; // red
+$dark-trans:              rgba(27, 35, 42, 0.9);
+
+
+$color2:            $brand-success;
+$brand-success-t:   rgba(35, 116, 48, 0.9);
+$color1--dark:      #253842;            // dark blue
+$blue-faded:        rgba(51, 77, 92, 0.77);
+$color2--light:     #3A6673;               // light green
+$color3:            #56799C;                // light blue
+$color4:            $brand-success;        // green
+$color5:            $brand-danger;          // red
+
+$linkedin:          #00659B;
+$facebook:          #3B5895;
+$twitter:           #63CDF7;
+$google:            #FF0017;
+$pinterest:         #CE1E1F;
+$mail:              $color3;
+
+$white:             #FFF;
+$white2:            #EFE6DC;
+$gray1:             #F7F7F7;
+$gray2:             #EEE;
+$gray3:             #D8D8D8;
+$gray4:             #9A9EA1;
+$gray5:             #333;
+$gray6:             #e5e5e5;
+$black:             #2e2f32;
+$beige:             #F2EAD0;
+
+
+$body-bg: #fff;
+$text-muted:            $gray4;
+
+
+/*------------------------------------*\
+    $TEXT
+\*------------------------------------*/
+$text-color:                        $black;
+
+// Grays
+.white                              { color: $white; }
+.gray1                              { color: $gray1; }
+.gray2                              { color: $gray2; }
+.gray3                              { color: $gray3; }
+.gray4                              { color: $gray4; }
+.gray5                              { color: $gray5; }
+.gray6                              { color: $gray6; }
+.black                              { color: $black; }
+
+// Social Colors
+.color-twitter,
+.hover-color-twitter:hover          { color: $twitter; }
+
+.color-linkedin,
+.hover-color-linkedin:hover         { color: $linkedin; }
+
+.color-facebook,
+.hover-color-facebook:hover         { color: $facebook; }
+
+.color-google,
+.hover-color-google:hover           { color: $google; }
+
+.color-mail,
+.hover-color-mail:hover             { color: $mail; }
+
+// Colors
+.primary,
+.hover-primary:hover,
+.hover-primary.active                { color: $brand-primary !important; }
+
+.success,
+.hover-success:hover,
+.hover-success.active                { color: $brand-success !important; }
+
+.color3,
+.hover-color3:hover,
+.hover-color3.active                { color: $color3 !important; }
+
+.color4,
+.hover-color4:hover,
+.hover-color4.active                { color: $color4 !important; }
+
+.color5,
+.hover-color5:hover,
+.hover-color5.active                { color: $color5 !important; }
+
+.error { color : $color5 !important; }
+
+
+
+
+/*------------------------------------*\
+    $BACKGROUND
+\*------------------------------------*/
+
+.bg-white                           { background-color: $white; }
+.bg-gray1                           { background-color: $gray1; }
+.bg-gray2                           { background-color: $gray2; }
+.bg-gray3                           { background-color: $gray3; }
+.bg-gray4                           { background-color: $gray4; }
+.bg-gray5                           { background-color: $gray5; }
+.bg-gray6                           { background-color: $gray6; }
+.bg-black                           { background-color: $black; }
+
+.bg-color1                          { background-color: $brand-primary; }
+.bg-color2                          { background-color: $color2; }
+.bg-color3                          { background-color: $color3; }
+.bg-color4                          { background-color: $color4; }
+.bg-color5                          { background-color: $color5; }
+
+
+.bg-gray4,
+.bg-gray5,
+.bg-gray6,
+.bg-black,
+.bg-color1,
+.bg-color2,
+.bg-color3,
+.bg-color4,
+.bg-color5{
+    color: $white;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $BORDERS
+\*------------------------------------*/
+
+.border-color1          { border-color: $brand-primary; }
+.border-color2          { border-color: $color2; }
+.border-color3          { border-color: $color3; }
+.border-color4          { border-color: $color4; }
+
+.border-none{
+    border: none !important;
+}

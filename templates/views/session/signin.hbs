@@ -1,0 +1,48 @@
+<div id="modal-auth" tabindex="-1" role="dialog" aria-labelledby="signin" aria-hidden="false" class="modal in light-brd" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="auth-box modal-pane-signin">
+                <div class="modal-header">
+                    <a href="/"><button type="button" data-dismiss="modal" aria-hidden="true" class="close"><i class="ion-ios7-close"></i></button></a>
+                    <h3 class="modal-title">Log Inn</h3>
+                </div>
+            <div class="modal-body">
+                <div class="social-signup-buttons">
+                    <div class="signup-button">
+                        <label>Logg inn med </label>
+                        <a href="/auth/facebook?target=/signin" title="Sign in with Facebook" class="btn btn-face">
+                            <span class="signup-button__text"> Facebook</span>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="auth-form-divider"><span class="auth-form-divider-text">Eller</span></p>
+
+            <form method="post" action="/signin" role="signin" novalidate="novalidate" class="auth-form">
+                <input type="hidden" name="action" value="signin">
+                <input type="hidden" name="target" value="/">
+                <div class="form-groups">
+                    <div class="form-group">
+                        <label for="signin-email" class="sr-only">Email</label>
+                        <input type="email" name="email" placeholder="Email" id="signin-email" class="form-control form-control--first">
+                    </div>
+                    <div class="form-group"><label for="signin-password" class="sr-only">Password</label>
+                        <input type="password" name="password" placeholder="Password" id="signin-password" value="" class="form-control form-control--last">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-block btn-primary btn-submit">Logg Inn</button>
+            </form>
+                <div class="row text-muted mt-3">
+                    <div class="col-sm-8">
+                        Ikke registrert? <a href="/join" rel="modal-pane" data-modal-pane="join">Bli Medlem</a>
+                    </div>
+                    <div class="col-sm-4 text-right">
+                        <a href="/forgot-password" rel="modal-pane" data-modal-pane="password">Glemt passordet?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

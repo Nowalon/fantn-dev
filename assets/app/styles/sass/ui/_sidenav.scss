@@ -1,0 +1,42 @@
+.sidenav {
+    position:fixed;
+    text-align: center;
+    top: $nav-height;
+    left:0;
+    bottom:0;
+    width: 130px;
+    background-color: $color1--dark;
+    padding: 0;
+    padding-top: 34px;
+}
+
+.sidenav span {
+    color: $brand-info;
+}
+
+.sidenav .nav-btn {
+    display: block;
+    padding: 20px 10px;
+    cursor:pointer;
+    @include transition(background-color .2s ease-in);
+
+    &:hover {
+        background-color: $brand-primary;
+    }
+}
+
+.sidenav  p { margin-top: 6px; color:$gray1; font-size: 0.7em;}
+
+
+.sidenav .bottom {
+    position: absolute;
+    text-align: center;
+    bottom: 20px;
+    width: 87%;
+    cursor: pointer;
+}
+
+.sidenav p {
+    font-weight:500;
+    text-transform:uppercase;
+}

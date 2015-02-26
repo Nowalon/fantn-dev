@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="landing-test"
+             errors="0"
+             failures="0"
+             tests="8">
+  
+  <testsuite errors="0" failures="0" hostname="" id=""
+    name="Open Landing page" package="landing-test" skipped="0"
+    tests="3" time="" timestamp="">
+    
+    
+      <testcase name="Element &lt;body&gt; was visible after 69 milliseconds.">
+        
+        
+      </testcase>
+    
+      <testcase name="Testing if the page title equals &quot;FANTN · It&#39;s Never Lost&quot;.">
+        
+        
+      </testcase>
+    
+      <testcase name="Testing if element &lt;#heading&gt; contains text: &quot;FantN&quot;.">
+        
+        
+      </testcase>
+    
+    
+    </testsuite>
+  
+  <testsuite errors="0" failures="0" hostname="" id=""
+    name="Click on become member" package="landing-test" skipped="0"
+    tests="5" time="" timestamp="">
+    
+    
+      <testcase name="Element &lt;body&gt; was visible after 53 milliseconds.">
+        
+        
+      </testcase>
+    
+      <testcase name="Element &lt;#join-header&gt; was visible after 28 milliseconds.">
+        
+        
+      </testcase>
+    
+      <testcase name="Testing if element &lt;#join-header&gt; contains text: &quot;Bli Medlem Hos FANTN&quot;.">
+        
+        
+      </testcase>
+    
+      <testcase name="Element &lt;input#email&gt; was visible after 21 milliseconds.">
+        
+        
+      </testcase>
+    
+      <testcase name="Testing if value of &lt;input#email&gt; contains: &quot;sapdap@mail.com&quot;.">
+        
+        
+      </testcase>
+    
+    
+    </testsuite>
+  
+</testsuites>
