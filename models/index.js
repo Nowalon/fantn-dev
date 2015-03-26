@@ -4,3 +4,4 @@ require('./PreUser');
 require('./Message');
 require('./Issue');
 require('./Event');
+require('./Terminal');
