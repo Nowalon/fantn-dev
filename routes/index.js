@@ -52,9 +52,14 @@ exports = module.exports = function(app) {
 	// stripe
 	app.post('/api/users/:userId/payment/chargeStripe', middleware.requireUser, routes.api.payment.chargeStripe);
 
-        //REST for Mobile App
+/***/        //REST for Mobile App
         app.all('/api/get_terminals', routes.api.terminalApi.getTerminal);
+
         app.post('/api/reg_terminal', routes.api.terminalApi.regTerminal);
+        app.post('/api/authenticate_user', routes.api.terminalApi.authenticateTerminalUser);
+        app.post('/api/authorize_user', routes.auth.terminalTokenService, routes.api.terminalApi.authorizeTerminalUser);
+        app.post('/api/get_owner_info', routes.auth.terminalTokenService, routes.api.terminalApi.getOwnerInfo);
+
 
 	// paypal
 	app.all('/api/users/:userId/payment/chargePaypal', middleware.requireUser, routes.api.payment.chargePaypal);

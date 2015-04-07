@@ -13,6 +13,7 @@ Terminal.add({
     userId: { type: Types.Relationship, ref: 'User', index: true },
         // "90052300"
     mobileNumber : { type : Types.Text },
+    requestedRole : { type : Types.Text, default: null },
     createdOn : {type: Types.Datetime, default: Date.now},
     modifiedOn : {type: Types.Datetime, default: Date.now},
 });
