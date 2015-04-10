@@ -3,6 +3,7 @@ var updateQrCodeService = require('../services/user/updateQrCodeService'),
     authenticateTerminalService = require('../services/user/authenticateTerminalService'),
     authorizeTerminalService = require('../services/user/authorizeTerminalService'),
     getItemOwnerTerminalService = require('../services/user/getItemOwnerTerminalService'),
+    informStatusTerminalService = require('../services/user/informStatusTerminalService'),
     createQrCodeService = require('../services/qrcode/createQrCode'),
     keystone            = require('keystone'),
     User                = keystone.list('User'),
@@ -12,6 +13,7 @@ var updateQrCodeService = require('../services/user/updateQrCodeService'),
     _                   = require('lodash'),
     routeUtils          = require('../lib/routeUtils'),
     utils               = require('../lib/routeUtils');
+
 
 function error(err, res) {
     return res.status(400).json({error: err});
@@ -154,7 +156,7 @@ module.exports.authorizeTerminalUser = function (req, res, next) {
                 req: req,
                 res: res
             })    .then(function (result) {
-                res.json({OK: 'terminal authorized', terminal: result.terminal});
+                res.json({OK: 'terminal authorized'}); /*, terminal: result.terminal*/
             })
             .fail(function(err){
                 error401(err, res);
@@ -197,6 +199,81 @@ module.exports.getOwnerInfo = function (req, res, next) {
 };
 
 
+    //inform_status {token: <token>, item_id: <item_id>, status: 'FOUND'}
+module.exports.informStatus = function (req, res, next) {
+    var body = req.body;
+    var isValid = true, errPropMsg = "for request: /api/inform_status: ";
+
+        if (!body.token || !body.token.length) {
+            errPropMsg += " 'token' property is required;";
+            isValid = false;
+        }
+        if (!body.item_id || !body.item_id.length) {
+            errPropMsg += " 'item_id' property is required;";
+            isValid = false;
+        }
+        if (!body.status || !body.status.length) {
+            errPropMsg += " 'status' property is required;";
+            isValid = false;
+        }
+
+        if (isValid) {
+
+            return informStatusTerminalService({
+                serialNumber: body.item_id,
+                messageId: 2,
+                reqData: body,
+                req: req,
+                res: res
+            })    .then(function (result) {
+                res.json({action: result.eventResult.action, actionText: result.eventResult.actionText, message: result.translatedMsg});
+            })
+            .fail(function(err){
+                error(err, res);
+            }).done();
+        } else {
+            error(errPropMsg, res);
+        }
+};
+
+
+    //register_item_by_term {'token': <token>, 'item_id': <item_id>, 'terminal_id': <terminal_id>, 'geo_info': (<latitude>,<longitude>)}
+module.exports.registerItemByTerminal = function (req, res, next) {
+
+//console.log("registerItemByTerminal API req.body: ", req.body);  //return false;
+//console.log("registerItemByTerminal API req.body.geo_info: ", req.body.geo_info, ' = ', typeof req.body.geo_info);  //return false;
+    var body = req.body;
+    var isValid = true, errPropMsg = "for request: /api/register_item_by_term: ";
+
+
+        if (!body.token || !body.token.length) {
+            errPropMsg += " 'token' property is required;";
+            isValid = false;
+        }
+        if (!body.item_id || !body.item_id.length) {
+            errPropMsg += " 'item_id' property is required;";
+            isValid = false;
+        }
+        if (!body.terminal_id || !body.terminal_id.length) {
+            errPropMsg += " 'terminal_id' property is required;";
+            isValid = false;
+        }
+        if (!body.geo_info || !body.geo_info.length) {
+            errPropMsg += " 'geo_info' property is required;";
+            isValid = false;
+        }
+
+        if (isValid) {
+
+
+res.json({req_body: req.body, todo: " ! CHANGE terminal.requestedRole === 'TAG' ! "});
+
+
+
+        } else {
+            error(errPropMsg, res);
+        }
+};
 
 
 

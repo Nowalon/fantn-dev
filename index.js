@@ -56,7 +56,6 @@ function initKeystone() {
 		'auth': true,
 		'user model': 'User',
 		'cookie secret': '1?$VBE=f>y1gH^C#(l-S>?JV_$&v|obEu7S89[>xVF_EpG<`DX&JirG)~26d0SqJ',
-
 	});
 
 	// cloudinary

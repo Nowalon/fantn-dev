@@ -270,6 +270,8 @@ function registerFantnUserContacted (smsSent, body, qrCode, next) {
     event.save(function (e, eventRes) {
         if (e) { logger.log({type:'error', msg : 'Failed to save event ' + e}); }
 
+        body.eventResult = eventRes;
+
         logger.log({type:'info', what: 'EVENT CREATED', action : eventRes.action, qrCode : eventRes.qrCode});
         next(null, body, qrCode);
     });

@@ -54,6 +54,7 @@ exports = module.exports = function(req, res, next) {
                             var pattAuthorize = new RegExp("authorize_user");
                             var pattGetOwnerInfo = new RegExp("get_owner_info");
                             var pattInformStatus = new RegExp("inform_status");
+                            var pattRegisterItemByTerm = new RegExp("register_item_by_term");
                             req.Terminal = terminal;
                             if (pattAuthorize.test(req.url)) {
                                 next();
@@ -66,7 +67,13 @@ exports = module.exports = function(req, res, next) {
                                             error401('unauthorized', res);
                                         }
                                     } else if (pattInformStatus.test(req.url)) {
-                                        if (terminal.requestedRole === 'TAG') {
+                                        if (terminal.requestedRole === 'PRO') {
+                                            next();
+                                        } else {
+                                            error401('unauthorized', res);
+                                        }
+                                    } else if (pattRegisterItemByTerm.test(req.url)) {
+                                        if (terminal.requestedRole === 'PRO') {
                                             next();
                                         } else {
                                             error401('unauthorized', res);
