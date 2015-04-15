@@ -5,3 +5,4 @@ require('./Message');
 require('./Issue');
 require('./Event');
 require('./Terminal');
+require('./ItemTransfer');

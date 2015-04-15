@@ -53,7 +53,7 @@ exports = module.exports = function(app) {
 	app.post('/api/users/:userId/payment/chargeStripe', middleware.requireUser, routes.api.payment.chargeStripe);
 
 /***/        //REST for Mobile App
-//        app.all('/api/get_terminals', routes.api.terminalApi.getTerminal);
+        app.all('/api/get_terminals', routes.api.terminalApi.getTerminal);
 
         app.post('/api/reg_terminal', routes.api.terminalApi.regTerminal);
         app.post('/api/authenticate_user', routes.api.terminalApi.authenticateTerminalUser);
@@ -61,7 +61,6 @@ exports = module.exports = function(app) {
         app.post('/api/get_owner_info', routes.auth.terminalTokenService, routes.api.terminalApi.getOwnerInfo);
         app.post('/api/inform_status', routes.auth.terminalTokenService, routes.api.terminalApi.informStatus);
         app.post('/api/register_item_by_term', routes.auth.terminalTokenService, routes.api.terminalApi.registerItemByTerminal);
-
 
 	// paypal
 	app.all('/api/users/:userId/payment/chargePaypal', middleware.requireUser, routes.api.payment.chargePaypal);

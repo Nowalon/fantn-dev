@@ -4,11 +4,13 @@ var updateQrCodeService = require('../services/user/updateQrCodeService'),
     authorizeTerminalService = require('../services/user/authorizeTerminalService'),
     getItemOwnerTerminalService = require('../services/user/getItemOwnerTerminalService'),
     informStatusTerminalService = require('../services/user/informStatusTerminalService'),
+    createItemTransfer = require('../services/qrcode/createItemTransfer'),
     createQrCodeService = require('../services/qrcode/createQrCode'),
     keystone            = require('keystone'),
     User                = keystone.list('User'),
     QrCode              = keystone.list('QrCode'),
     Terminal            = keystone.list('Terminal'),
+    ItemTransfer        = keystone.list('ItemTransfer'),
     logger              = require('logfmt'),
     _                   = require('lodash'),
     routeUtils          = require('../lib/routeUtils'),
@@ -33,6 +35,14 @@ function escapeLand (land) {
     return land;
 }
 
+Object.toType = (function toType(global) {
+  return function(obj) {
+    if (obj === global) {
+      return "global";
+    }
+    return ({}).toString.call(obj).match(/\s([a-z|A-Z]+)/)[1].toLowerCase();
+  }
+})(this);
 
     // get all terminals
 module.exports.getTerminal = function (req, res, next) {
@@ -238,13 +248,10 @@ module.exports.informStatus = function (req, res, next) {
 
 
     //register_item_by_term {'token': <token>, 'item_id': <item_id>, 'terminal_id': <terminal_id>, 'geo_info': (<latitude>,<longitude>)}
+    /*  Notice. This method should be allowed for 'TAG' role only. ( terminal.requestedRole === 'TAG' ) !  */
 module.exports.registerItemByTerminal = function (req, res, next) {
-
-//console.log("registerItemByTerminal API req.body: ", req.body);  //return false;
-//console.log("registerItemByTerminal API req.body.geo_info: ", req.body.geo_info, ' = ', typeof req.body.geo_info);  //return false;
     var body = req.body;
     var isValid = true, errPropMsg = "for request: /api/register_item_by_term: ";
-
 
         if (!body.token || !body.token.length) {
             errPropMsg += " 'token' property is required;";
@@ -262,14 +269,33 @@ module.exports.registerItemByTerminal = function (req, res, next) {
             errPropMsg += " 'geo_info' property is required;";
             isValid = false;
         }
+        if (body.geo_info && Object.toType(body.geo_info) != 'array' ) {
+            errPropMsg += " wrong format for 'geo_info' property, Array [latitude,longitude] required;";
+            isValid = false;
+        }
+        if (body.geo_info && Object.toType(body.geo_info) == 'array' ) {
+            if (body.geo_info.length != 2 || !body.geo_info[0] || !body.geo_info[1]) {
+                errPropMsg += " wrong format for 'geo_info' property, Array [latitude,longitude] required!!!!!;";
+                isValid = false;
+            }
+        }
 
         if (isValid) {
 
-
-res.json({req_body: req.body, todo: " ! CHANGE terminal.requestedRole === 'TAG' ! "});
-
-
-
+            return createItemTransfer({
+                terminalId: body.terminal_id,
+                itemId: body.item_id,
+                geo_info: [body.geo_info[1], body.geo_info[0]],
+                reqData: body,
+                req: req,
+                res: res
+            })    .then(function (result) {
+                //console.log("result.item_transfer: ", result.item_transfer);  //return false;
+                res.json({OK: 'itemTransfer succesfully registered'});
+            })
+            .fail(function(err){
+                error(err, res);
+            }).done();
         } else {
             error(errPropMsg, res);
         }
